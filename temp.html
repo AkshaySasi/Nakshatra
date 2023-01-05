@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FITS Image Viewer</title>
+    <style type="text/css">
+body{
+  color: blue;
+  background-color: black;
+  display: block;
+  margin: 50;
+  width: 800px;
+  height: 600px;
+}
+  </style>
+<script>
+const fileForm = document.getElementById('file-form');
+const fileInput = document.getElementById('file-input');
+const imageCanvas = document.getElementById('body');
+
+fileForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  for (const file of fileInput.files) {
+    // process the FITS file using the canvas element
+  }
+});
+imageCanvas.addEventListener('mousemove', event => {
+  const rect = imageCanvas.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+
+  // determine if the mouse is hovering over a star
+  if (isHoveringOverStar(x, y)) {
+    const temperature = getStarTemperature(x, y);
+    showToolTip(temperature);
+  } else {
+    hideToolTip();
+  }
+});
+<form id="range-form">
+  <label for="range-input">Select temperature range:</label>
+  <input type="range" id="range-input" min="0" max="10000" />
+</form>
+const rangeForm = document.getElementById('range-form');
+const rangeInput = document.getElementById
+</script>
+  <body>
+   <script src="[tem].js"></script>
+    <h1>FITS Image Viewer</h1>
+    <form id="file-form">
+      <label for="file-input">Select FITS files:</label>
+      <input type="file" id="file-input" multiple />
+      <input type="submit" value="Submit" />
+    </form>
+    <canvas id="body"></canvas>
+  </body>
+</head>
+</html>
